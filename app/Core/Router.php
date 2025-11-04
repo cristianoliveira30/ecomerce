@@ -50,14 +50,17 @@ class Router
     public function renderView($view, $data = [])
     {
         extract($data);
+        ob_start();
         $viewPath = __DIR__ . '/../Views/' . $view . '.php';
 
-        include __DIR__ . '/../Views/layouts/header.php';
         if (file_exists($viewPath)) {
             include $viewPath;
         } else {
             echo "<p>⚠️ View <strong>{$view}</strong> não encontrada.</p>";
+            return;
         }
-        include __DIR__ . '/../Views/layouts/footer.php';
+
+        $content = ob_get_clean();
+        include __DIR__ . '/../Views/layouts/main.php';
     }
 }
