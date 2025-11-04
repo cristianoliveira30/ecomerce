@@ -5,7 +5,8 @@
 4. Rode as migrations para criar as tabelas
 
 # Comandos
-php comands/make_migration.php nome_da_migration // cria uma migration
-php comands/migrate.php // roda as migrations
-php comands/migrate_rollback.php // desfaz o migrate
-php comands/make.php [controller|model|view] NomeDoArquivo // cria um controler, ou model, ou view
+1. php comands/make_migration.php nome_da_migration // cria uma migration
+2. php comands/migrate.php // roda as migrations
+3. php comands/migrate_rollback.php // desfaz o migrate
+4. php comands/make.php [controller|model|view] NomeDoArquivo // cria um controler, ou model, ou view
+5. php -S localhost:8000 -t public // use esse comando para expor o sistema, acesse pelo navegador através da url http://localhost:800
