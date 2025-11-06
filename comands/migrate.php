@@ -13,7 +13,7 @@ try {
     $pdo->exec("
         CREATE TABLE IF NOT EXISTS migrations (
             id INT AUTO_INCREMENT PRIMARY KEY,
-            name VARCHAR(255) UNIQUE,
+            name VARCHAR(100) UNIQUE,
             migrated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
         )
     ");

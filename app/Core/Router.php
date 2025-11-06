@@ -29,10 +29,14 @@ class Router
             return;
         }
 
+        // ✅ Caso o callback seja uma função anônima
         if (is_callable($callback)) {
             echo call_user_func($callback);
-        } elseif (is_string($callback)) {
-            // exemplo: "HomeController@index"
+            return;
+        }
+
+        // ✅ Caso o callback seja um controller do tipo "HomeController@index"
+        if (is_string($callback)) {
             [$controller, $method] = explode('@', $callback);
             $controllerPath = __DIR__ . '/../Controllers/' . $controller . '.php';
 
@@ -42,15 +46,31 @@ class Router
             }
 
             require_once $controllerPath;
-            $controllerInstance = new $controller();
-            echo call_user_func([$controllerInstance, $method]);
+
+            // ✅ Usa o namespace correto
+            $controllerClass = "App\\Controllers\\{$controller}";
+            $controllerInstance = new $controllerClass();
+
+            $response = call_user_func([$controllerInstance, $method]);
+
+            if (is_array($response) && isset($response['view'])) {
+                $this->renderView($response['view'], $response['data'] ?? []);
+            } else {
+                echo $response;
+            }
+
+            return;
         }
     }
+
 
     public function renderView($view, $data = [])
     {
         extract($data);
         ob_start();
+
+        $user = \App\Core\Auth::user();
+        $isLoggedIn = \App\Core\Auth::check();
         $viewPath = __DIR__ . '/../Views/' . $view . '.php';
 
         if (file_exists($viewPath)) {
