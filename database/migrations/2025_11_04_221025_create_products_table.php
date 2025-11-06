@@ -13,6 +13,7 @@ return new class {
                 price DECIMAL(8,2) DEFAULT 0.00,
                 rating DECIMAL(2,1) DEFAULT 0.0,
                 image VARCHAR(255),
+                category VARCHAR(50) DEFAULT 'geral',
                 created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
                 updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
             )

@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Models;
 
 class Product
@@ -7,11 +6,14 @@ class Product
     private $id;
     private $title;
     private $slug;
+    private $category;
     private $shortDescription;
     private $description;
     private $price;
+    private $stock;
     private $rating;
     private $image;
+    private $supplier;
 
     // Getters e Setters
     public function getId() { return $this->id; }
@@ -23,6 +25,9 @@ class Product
     public function getSlug() { return $this->slug; }
     public function setSlug($slug) { $this->slug = $slug; }
 
+    public function getCategory() { return $this->category; }
+    public function setCategory($category) { $this->category = $category; }
+
     public function getShortDescription() { return $this->shortDescription; }
     public function setShortDescription($shortDescription) { $this->shortDescription = $shortDescription; }
 
@@ -32,9 +37,15 @@ class Product
     public function getPrice() { return $this->price; }
     public function setPrice($price) { $this->price = $price; }
 
+    public function getStock() { return $this->stock; }
+    public function setStock($stock) { $this->stock = $stock; }
+
     public function getRating() { return $this->rating; }
     public function setRating($rating) { $this->rating = $rating; }
 
     public function getImage() { return $this->image; }
     public function setImage($image) { $this->image = $image; }
+
+    public function getSupplier() { return $this->supplier; }
+    public function setSupplier($supplier) { $this->supplier = $supplier; }
 }

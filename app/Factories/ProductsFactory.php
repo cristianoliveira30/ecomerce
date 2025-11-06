@@ -14,9 +14,12 @@ class ProductsFactory
         $product->setSlug($data['slug'] ?? '');
         $product->setShortDescription($data['short_description'] ?? '');
         $product->setDescription($data['description'] ?? '');
+        $product->setCategory($data['category'] ?? '');
         $product->setPrice($data['price'] ?? 0);
+        $product->setStock($data['stock'] ?? 0);
         $product->setRating($data['rating'] ?? 0);
         $product->setImage($data['image'] ?? '');
+        $product->setSupplier($data['supplier'] ?? '');
         return $product;
     }
 }
