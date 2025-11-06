@@ -17,9 +17,12 @@ Este projeto é uma plataforma de venda de cursos desenvolvida **em PHP puro**, 
 
 | Comando | Descrição |
 |----------|------------|
-| `php comands/make_migration.php nome_da_migration` | Cria uma nova migration. |
+| `php comands/make_migration.php create_nome_table` | Cria uma nova migration. |
+| `php comands/make_factory.php Nome` | Cria uma nova migration. |
 | `php comands/migrate.php` | Executa as migrations e cria as tabelas no banco. |
 | `php comands/migrate_rollback.php` | Desfaz a última execução das migrations. |
+| `php comands/seed.php 10` | Popula as tabelas com as factories criadas, coloque a quantidade desejadas. |
+| `php database/factories/NomeFactory.php 10` | Popula uma factory, coloque a quantidade desejadas. |
 | `php comands/make.php [controller/model/view] NomeDoArquivo` | Cria um Controller, Model ou View automaticamente. |
 | `php -S localhost:8000 -t public` | Inicia o servidor local, acesse via [http://localhost:8000](http://localhost:8000). |
 
