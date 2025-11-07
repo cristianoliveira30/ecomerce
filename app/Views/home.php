@@ -70,7 +70,7 @@
                 <div class="row g-4">
                   <?php foreach ($chunk as $product): ?>
                     <div class="col-md-3">
-                      <div class="card h-100 shadow-sm border-0">
+                      <div class="card h-100 shadow-sm border-2 rounded-5">
                         <img src="/<?= htmlspecialchars($product->getImage()) ?>" class="card-img-top" alt="<?= htmlspecialchars($product->getTitle()) ?>">
                         <div class="card-body">
                           <h5 class="card-title fw-bold"><?= htmlspecialchars($product->getTitle()) ?></h5>

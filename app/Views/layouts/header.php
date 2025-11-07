@@ -33,7 +33,6 @@
           </a>
 
           <?php if ($isLoggedIn): ?>
-            <span class="text-light me-lg-3 mb-2 mb-lg-0">Olá, <?= htmlspecialchars($user->name) ?>!</span>
             <a href="/logout" class="btn btn-outline-light rounded-pill px-3 w-100 w-lg-auto mb-2 mb-lg-0">Sair</a>
           <?php else: ?>
             <a href="#" id="openLoginBtn" class="btn btn-outline-light rounded-pill px-3 w-100 w-lg-auto mb-2 me-1 mb-lg-0">Entrar</a>
